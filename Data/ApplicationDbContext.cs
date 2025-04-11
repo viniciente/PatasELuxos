@@ -14,8 +14,9 @@ namespace PataseLuxos.Data
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Animal> Animals { get; set; }
         public DbSet<Produto> Produtos { get; set; }
-        public DbSet<FormaPagamento> FormarPagamentos { get; set; } = default!;
+        public DbSet<FormaPagamento> FormarPagamentos { get; set; }
         public DbSet<Carrinho> Carrinhos { get; set; }
+        public DbSet<Veterinario> Veterinarios { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -24,5 +25,6 @@ namespace PataseLuxos.Data
             builder.Entity<Usuario>().ToTable("Usuario");
         }
         public DbSet<PataseLuxos.Models.Animal> Animal { get; set; } = default!;
+        public DbSet<PataseLuxos.Models.Veterinario> Veterinario { get; set; } = default!;
     }
 }
