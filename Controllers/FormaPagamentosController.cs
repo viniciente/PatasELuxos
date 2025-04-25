@@ -48,7 +48,7 @@ namespace PataseLuxos.Controllers
         // GET: FormaPagamentos/Create
         public IActionResult Create()
         {
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "UsuarioId");
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Nome");
             return View();
         }
 
@@ -66,7 +66,7 @@ namespace PataseLuxos.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "UsuarioId", formaPagamento.UsuarioId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Nome", formaPagamento.UsuarioId);
             return View(formaPagamento);
         }
 
@@ -83,7 +83,7 @@ namespace PataseLuxos.Controllers
             {
                 return NotFound();
             }
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "UsuarioId", formaPagamento.UsuarioId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Nome", formaPagamento.UsuarioId);
             return View(formaPagamento);
         }
 
@@ -119,7 +119,7 @@ namespace PataseLuxos.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "UsuarioId", formaPagamento.UsuarioId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Nome", formaPagamento.UsuarioId);
             return View(formaPagamento);
         }
 

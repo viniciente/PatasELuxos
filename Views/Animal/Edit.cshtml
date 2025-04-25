@@ -35,10 +35,19 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<form asp-action="Edit">
+    <input type="hidden" asp-for="AnimalId" />
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <a asp-action="Index" class="btn btn-outline-secondary w-100 p-3"><i class="bi bi-arrow-repeat"></i>Voltar</a>
+            </div>
+        </div>
+    </div>
+</form>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -50,7 +50,7 @@ namespace PataseLuxos.Controllers
         public IActionResult Create()
         {
             ViewData["FormaPagamentoId"] = new SelectList(_context.FormarPagamentos, "FormaPagamentoId", "FormaPagamentoId");
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "ProdutoId");
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "NomeProduto");
             return View();
         }
 
@@ -69,7 +69,7 @@ namespace PataseLuxos.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["FormaPagamentoId"] = new SelectList(_context.FormarPagamentos, "FormaPagamentoId", "FormaPagamentoId", carrinho.FormaPagamentoId);
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "ProdutoId", carrinho.ProdutoId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "NomeProduto", carrinho.ProdutoId);
             return View(carrinho);
         }
 
@@ -87,7 +87,7 @@ namespace PataseLuxos.Controllers
                 return NotFound();
             }
             ViewData["FormaPagamentoId"] = new SelectList(_context.FormarPagamentos, "FormaPagamentoId", "FormaPagamentoId", carrinho.FormaPagamentoId);
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "ProdutoId", carrinho.ProdutoId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "NomeProduto", carrinho.ProdutoId);
             return View(carrinho);
         }
 
@@ -124,7 +124,7 @@ namespace PataseLuxos.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["FormaPagamentoId"] = new SelectList(_context.FormarPagamentos, "FormaPagamentoId", "FormaPagamentoId", carrinho.FormaPagamentoId);
-            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "ProdutoId", carrinho.ProdutoId);
+            ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "NomeProduto", carrinho.ProdutoId);
             return View(carrinho);
         }
 

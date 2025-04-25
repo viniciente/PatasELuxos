@@ -48,7 +48,7 @@ namespace PataseLuxos.Controllers
         // GET: Animal/Create
         public IActionResult Create()
         {
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "UsuarioId");
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Nome");
             return View();
         }
 
@@ -66,7 +66,7 @@ namespace PataseLuxos.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "UsuarioId", animal.UsuarioId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Nome", animal.UsuarioId);
             return View(animal);
         }
 
@@ -83,7 +83,7 @@ namespace PataseLuxos.Controllers
             {
                 return NotFound();
             }
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "UsuarioId", animal.UsuarioId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Nome", animal.UsuarioId);
             return View(animal);
         }
 
@@ -119,7 +119,7 @@ namespace PataseLuxos.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "UsuarioId", animal.UsuarioId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Nome", animal.UsuarioId);
             return View(animal);
         }
 
