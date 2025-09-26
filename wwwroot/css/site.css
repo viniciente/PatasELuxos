@@ -1,31 +1,60 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+    color: var(--bs-secondary-color);
+    text-align: end;
 }
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    text-align: start;
 }
+/* Estilo para a caixa de controle de fonte */
+#controle-fonte {
+    position: fixed; /* Fixa a posição da caixa na tela, mesmo quando rolar a página */
+    top: 68px; /* Distância de 80px do topo da página */
+    right: 20px; /* Distância de 20px da borda direita da página */
+    background-color: #fff; /* Fundo branco para a caixa */
+    border: 1px solid #ccc; /* Borda cinza clara em volta da caixa */
+    border-radius: 8px; /* Bordas arredondadas para deixar a caixa com cantos suaves */
+    padding: 10px; /* Espaçamento interno de 10px dentro da caixa */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra leve para dar efeito de elevação */
+    z-index: 1000; /* Garante que o controle fique acima de outros elementos na tela */
+}
+
+    /* Estilo para os botões dentro do controle de fonte */
+    #controle-fonte button {
+        background-color: #6f4e37; /* Cor de fundo dos botões (tom de café) */
+        color: #fff; /* Cor da fonte dos botões (branca) */
+        border: none; /* Remove a borda padrão dos botões */
+        margin: 2px; /* Margem externa de 2px entre os botões */
+        padding: 8px 12px; /* Espaçamento interno (8px em cima/baixo, 12px nas laterais) */
+        font-size: 18px; /* Tamanho da fonte dos botões */
+        border-radius: 5px; /* Bordas arredondadas nos botões */
+        cursor: pointer; /* Mostra a mãozinha ao passar o mouse, indicando que é clicável */
+    }
+
+        /* Estilo para o botão quando o mouse passa por cima (hover) */
+        #controle-fonte button:hover {
+            background-color: #5a392a; /* Cor mais escura para indicar que está sendo "hovered" */
+        }
